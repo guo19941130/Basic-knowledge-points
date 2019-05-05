@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>性能优化</title>
+    <!-- <script src="../JS知识点/js/defer1.js" defer></script>
+    <script src="../JS知识点/js/defer2.js" defer></script> -->
+    <script src="../JS知识点/js/async1.js" async></script>
+    <script src="../JS知识点/js/async2.js" async></script>
+
+</head>
+<!-- defer & async区别：
+    defer:是在html解析完之后才会执行，如果多次，按照加载顺序执行
+    async：async是在加载完之后立即执行，如果是多个，执行顺序和加载顺序无关
+-->
+<body>
+    
+    <div>
+        <script>
+            document.write("<span>write</span>")
+        </script>
+        <script>
+            for (var i = 0; i < 500; i++) {
+                if(i % 200 === 0){
+                    console.log(i)
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
